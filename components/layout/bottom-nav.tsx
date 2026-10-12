@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Ellipsis, House, Newspaper, Scale, Smartphone, type LucideIcon } from 'lucide-react'
-import { MobileMenu } from '@/components/layout/mobile-menu'
 import { cn } from '@/lib/utils'
 
 const tabs: { label: string; href: string; icon: LucideIcon }[] = [
@@ -44,10 +43,14 @@ export function BottomNav() {
           )
         })}
         <li>
-          <MobileMenu triggerLabel="More options" triggerClassName={cn(tabClass, 'w-full text-muted-foreground hover:text-foreground')}>
+          <Link
+            href="/more"
+            aria-current={pathname.startsWith('/more') ? 'page' : undefined}
+            className={cn(tabClass, pathname.startsWith('/more') ? 'text-primary' : 'text-muted-foreground hover:text-foreground')}
+          >
             <Ellipsis className="size-6" strokeWidth={2} aria-hidden="true" />
-            <span aria-hidden="true">More</span>
-          </MobileMenu>
+            More
+          </Link>
         </li>
       </ul>
     </nav>

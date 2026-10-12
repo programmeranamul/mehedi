@@ -52,9 +52,9 @@ export function SiteHeader({ compareCount = 0, wishlistCount = 0, compactMobile 
             <Link href="/notifications" className={`${mobileIconClass} relative`}>
               <Bell className="size-6" strokeWidth={1.75} aria-hidden="true" />
               {!isMorePage && <span className="sr-only">Notifications</span>}
-              {compactMobile && <span className="absolute right-0.5 top-0.5 flex size-4 items-center justify-center rounded-full bg-primary text-[10px] font-semibold text-primary-foreground">2</span>}
+              {isMorePage && <span className="absolute right-0.5 top-0.5 flex size-4 items-center justify-center rounded-full bg-primary text-[10px] font-semibold text-primary-foreground">2</span>}
             </Link>
-            {compactMobile && <Link href="/more" aria-label="More options" className={mobileIconClass}>
+            {isMorePage && <Link href="/more" aria-label="More options" className={mobileIconClass}>
               <Ellipsis className="size-6" strokeWidth={2} aria-hidden="true" />
             </Link>}
           </div>
