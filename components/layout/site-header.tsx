@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link'
-import { Bell, Heart, Menu, Scale, Search } from 'lucide-react'
+import { usePathname } from 'next/navigation'
+import { Bell, Ellipsis, Heart, Menu, Scale, Search } from 'lucide-react'
 import { Container } from '@/components/layout/container'
 import { HeaderAction } from '@/components/layout/header-action'
 import { HeaderSearch } from '@/components/layout/header-search'
@@ -11,19 +14,23 @@ import { ThemeToggle } from '@/components/layout/theme-toggle'
 type SiteHeaderProps = {
   compareCount?: number
   wishlistCount?: number
+  compactMobile?: boolean
 }
 
 const mobileIconClass =
   'flex size-9 items-center justify-center rounded-md text-foreground transition-colors hover:bg-muted'
 
-export function SiteHeader({ compareCount = 0, wishlistCount = 0 }: SiteHeaderProps) {
+export function SiteHeader({ compareCount = 0, wishlistCount = 0, compactMobile = false }: SiteHeaderProps) {
+  const pathname = usePathname()
+  const isMorePage = compactMobile || pathname.startsWith('/more')
+
   return (
     <header>
       <div className="bg-background">
         <Container className="flex items-center gap-2.5 pt-3 md:h-[86px] md:gap-8 md:pt-0">
-          <MobileMenu triggerLabel="Open menu" triggerClassName={`${mobileIconClass} -ml-1.5 md:hidden`}>
+          {!isMorePage && <MobileMenu triggerLabel="Open menu" triggerClassName={`${mobileIconClass} -ml-1.5 md:hidden`}>
             <Menu className="size-7" strokeWidth={1.75} aria-hidden="true" />
-          </MobileMenu>
+          </MobileMenu>}
 
           <Logo />
 
@@ -38,20 +45,24 @@ export function SiteHeader({ compareCount = 0, wishlistCount = 0 }: SiteHeaderPr
           </div>
 
           <div className="-mr-1.5 ml-auto flex items-center gap-1 md:hidden">
-            <label htmlFor="mobile-search" className={`${mobileIconClass} cursor-pointer`}>
+            {!isMorePage && <label htmlFor="mobile-search" className={`${mobileIconClass} cursor-pointer`}>
               <Search className="size-6" strokeWidth={1.75} aria-hidden="true" />
               <span className="sr-only">Focus search</span>
-            </label>
-            <Link href="/notifications" className={mobileIconClass}>
+            </label>}
+            <Link href="/notifications" className={`${mobileIconClass} relative`}>
               <Bell className="size-6" strokeWidth={1.75} aria-hidden="true" />
-              <span className="sr-only">Notifications</span>
+              {!isMorePage && <span className="sr-only">Notifications</span>}
+              {compactMobile && <span className="absolute right-0.5 top-0.5 flex size-4 items-center justify-center rounded-full bg-primary text-[10px] font-semibold text-primary-foreground">2</span>}
             </Link>
+            {compactMobile && <Link href="/more" aria-label="More options" className={mobileIconClass}>
+              <Ellipsis className="size-6" strokeWidth={2} aria-hidden="true" />
+            </Link>}
           </div>
         </Container>
 
-        <Container className="pb-3 pt-3 md:hidden">
+        {!isMorePage && <Container className="pb-3 pt-3 md:hidden">
           <HeaderSearch id="mobile-search" variant="pill" placeholder="Search mobile, brand, model..." />
-        </Container>
+        </Container>}
       </div>
       <MainNav />
     </header>
