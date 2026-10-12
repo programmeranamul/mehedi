@@ -1,0 +1,172 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-inter), var(--font-bengali), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-oswald), ui-sans-serif, system-ui, sans-serif;
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+
+  --color-price: var(--price);
+  --color-navy: var(--navy);
+  --color-navy-foreground: var(--navy-foreground);
+  --color-navy-muted: var(--navy-muted);
+  --color-navy-border: var(--navy-border);
+  --color-hero: var(--hero);
+  --color-hero-deep: var(--hero-deep);
+  --color-badge: var(--badge);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+:root {
+  color-scheme: light;
+  --background: #ffffff;
+  --foreground: #111827;
+  --card: #ffffff;
+  --card-foreground: #111827;
+  --popover: #ffffff;
+  --popover-foreground: #111827;
+  --primary: #1d6ae5;
+  --primary-foreground: #ffffff;
+  --secondary: #f3f4f6;
+  --secondary-foreground: #111827;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+  --accent: #eff5ff;
+  --accent-foreground: #1d6ae5;
+  --destructive: #e0262f;
+  --border: #e5e7eb;
+  --input: #d9dde3;
+  --ring: #1d6ae5;
+  --radius: 0.5rem;
+
+  --price: #e0262f;
+  --navy: #0b1730;
+  --navy-foreground: #ffffff;
+  --navy-muted: #c3cad8;
+  --navy-border: #24304a;
+  --hero: #1446b8;
+  --hero-deep: #0a2470;
+  --badge: #e5e7eb;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #0b1220;
+  --foreground: #e5e7eb;
+  --card: #111a2e;
+  --card-foreground: #e5e7eb;
+  --popover: #111a2e;
+  --popover-foreground: #e5e7eb;
+  --primary: #4b8bf5;
+  --primary-foreground: #ffffff;
+  --secondary: #1a2540;
+  --secondary-foreground: #e5e7eb;
+  --muted: #1a2540;
+  --muted-foreground: #94a3b8;
+  --accent: #16264a;
+  --accent-foreground: #7aa8ff;
+  --destructive: #f43f5e;
+  --border: #1f2a44;
+  --input: #2a3654;
+  --ring: #4b8bf5;
+
+  --price: #f43f5e;
+  --navy: #060d1d;
+  --navy-foreground: #ffffff;
+  --navy-muted: #9aa5ba;
+  --navy-border: #1c2740;
+  --hero: #1446b8;
+  --hero-deep: #0a2470;
+  --badge: #24304a;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+/* Dual range slider: two stacked native inputs, only the thumbs receive pointer events */
+.dual-range {
+  -webkit-appearance: none;
+  appearance: none;
+  pointer-events: none;
+  background: transparent;
+}
+.dual-range::-webkit-slider-runnable-track {
+  background: transparent;
+  height: 38px;
+}
+.dual-range::-moz-range-track {
+  background: transparent;
+  height: 38px;
+}
+.dual-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  pointer-events: auto;
+  width: 18px;
+  height: 38px;
+  border-radius: 4px;
+  background: #e3141c;
+  border: none;
+  cursor: grab;
+}
+.dual-range::-moz-range-thumb {
+  pointer-events: auto;
+  width: 18px;
+  height: 38px;
+  border-radius: 4px;
+  background: #e3141c;
+  border: none;
+  cursor: grab;
+}
+@media (max-width: 767px) {
+  .dual-range::-webkit-slider-runnable-track {
+    height: 24px;
+  }
+  .dual-range::-moz-range-track {
+    height: 24px;
+  }
+  .dual-range::-webkit-slider-thumb {
+    width: 10px;
+    height: 24px;
+    border-radius: 3px;
+  }
+  .dual-range::-moz-range-thumb {
+    width: 10px;
+    height: 24px;
+    border-radius: 3px;
+  }
+}
+.dual-range:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
