@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { ChevronDown, ChevronRight, Gift, Heart, Plus, ShoppingCart, Star, Truck, ShieldCheck, RotateCcw, Headphones, CreditCard, Smartphone, Battery, Cpu, Wifi, Camera, Clock3 } from 'lucide-react'
+import { Battery, Camera, ChevronDown, ChevronRight, CircleHelp, Clock3, Cpu, CreditCard, Gift, Headphones, Heart, Info, Package, Plus, RotateCcw, ShieldCheck, ShoppingCart, Smartphone, Star, Truck, Wifi } from 'lucide-react'
 import { SiteHeader } from '@/components/layout/site-header'
 import { BottomNav } from '@/components/layout/bottom-nav'
 import { Container } from '@/components/layout/container'
@@ -18,6 +18,32 @@ const features = [
   ['Front Camera', '13MP', Camera], ['OS', 'Android 14, One UI 6', Clock3],
 ]
 const gallery = [phone.image, phone.image, phone.image, phone.image]
+const specificationGroups = [
+  ['Display', 'Screen & Display', Smartphone, ['6.5” Super AMOLED', '1080 x 2340 pixels, 19.5:9 ratio (~396 ppi density)', '90Hz Refresh Rate, 800 nits (HBM)']],
+  ['Performance', 'CPU & OS', Cpu, ['MediaTek Helio G99 (6nm)', 'Octa-core (2x2.2 GHz Cortex-A76 & 6x2.0 GHz Cortex-A55)', 'Android 14, One UI 6']],
+  ['Memory', 'RAM & Storage', Smartphone, ['4GB RAM', '128GB Internal Storage', 'microSDXC (dedicated slot)']],
+  ['Camera', 'Photo & Video', Camera, ['Rear Camera: 50MP (wide) + 5MP (ultrawide) + 2MP (macro)', 'Front Camera: 13MP (wide)', '1080p@30fps (video)']],
+  ['Battery', 'Power & Charging', Battery, ['5000mAh (typical)', '25W Fast Charging', 'USB Type-C 2.0']],
+  ['Network', 'SIM & Connectivity', Wifi, ['4G LTE', 'Dual SIM (Nano-SIM, dual stand-by)', 'Wi-Fi 802.11 a/b/g/n/ac, Bluetooth 5.3, GPS']],
+  ['Design', 'Build & Dimension', Smartphone, ['Dimensions: 160.1 x 76.8 x 8.4 mm', 'Weight: 200 g', 'Glass front, Plastic back, Plastic frame']],
+  ['Sensors', 'Sensors & Security', CircleHelp, ['Side-mounted fingerprint, Accelerometer', 'Proximity, Compass']],
+] as const
+
+function SpecificationSection() {
+  return <section className="mt-5 overflow-hidden rounded-xl border bg-card">
+    <div className="flex items-center gap-3 border-b px-4 py-4 md:px-6"><Info className="size-5" /><h2 className="text-base font-semibold">Full Specifications</h2></div>
+    {specificationGroups.map(([name, subtitle, Icon, values]) => <div key={name} className="grid grid-cols-[30px_145px_minmax(0,1fr)_18px] gap-2 border-b px-4 py-4 last:border-b-0 md:grid-cols-[34px_190px_minmax(0,1fr)_20px] md:px-6">
+      <Icon className="mt-1 size-5 text-muted-foreground" strokeWidth={1.7} /><div><p className="text-sm font-medium">{name}</p><p className="mt-1 text-xs text-muted-foreground">{subtitle}</p></div><div className="space-y-1 text-sm leading-5 text-foreground">{values.map((value) => <p key={value}>{value}</p>)}</div><ChevronRight className="mt-1 size-4 justify-self-end text-muted-foreground" />
+    </div>)}
+  </section>
+}
+
+function ProductContinuation() {
+  return <>
+    <section className="mt-5 overflow-hidden rounded-xl border bg-card p-4 md:p-6"><div className="flex items-center gap-3"><Package className="size-5" /><h2 className="text-base font-semibold">What&apos;s in the box</h2></div><div className="mt-6 grid grid-cols-2 gap-6 md:grid-cols-4">{[['Phone','1 x Samsung Galaxy A15'],['Cable','1 x USB Type-C Cable'],['Tool','1 x SIM Ejector Tool'],['Manual','1 x User Manual']].map(([icon, label]) => <div key={label} className="text-center"><div className="mx-auto flex size-12 items-center justify-center rounded-full bg-blue-50 text-primary"><Smartphone className="size-6" /></div><p className="mt-3 text-xs">{label}</p></div>)}</div></section>
+    <div className="mt-0 flex items-center gap-2 rounded-b-xl border border-t-0 bg-card px-4 py-4 text-xs text-muted-foreground md:px-6"><ShieldCheck className="size-4 shrink-0 text-primary" /> All information is for reference only and may change without notice.</div>
+  </>
+}
 
 function FeatureItem({ label, value, Icon }: { label: string; value: string; Icon: typeof Smartphone }) {
   return <div className="flex min-w-0 items-center gap-2 text-[12px] text-muted-foreground"><Icon className="size-4 shrink-0 text-foreground/70" strokeWidth={1.7} /><span><b className="font-medium text-foreground">{label}:</b> {value}</span></div>
@@ -64,6 +90,7 @@ export function ProductDetailPage() {
         <section className="mt-5 rounded-xl border bg-card p-4 md:p-6"><h2 className="text-sm font-semibold">Select Variant</h2><p className="mt-4 text-xs font-medium">RAM</p><div className="mt-2 flex gap-3">{['4GB','6GB','8GB'].map((item, i) => <button key={item} className={`rounded-md border px-4 py-2 text-sm ${i === 0 ? 'border-primary text-primary' : 'text-muted-foreground'}`}>{item}</button>)}</div><p className="mt-4 text-xs font-medium">Storage</p><div className="mt-2 flex gap-3"><button className="rounded-md border border-primary px-4 py-2 text-sm text-primary">128GB</button><button className="rounded-md border px-4 py-2 text-sm text-muted-foreground">256GB</button></div><p className="mt-5 text-xs font-medium">Color: Light Blue</p><div className="mt-2 flex gap-5">{[['Light Blue','bg-sky-100'],['Dark Blue','bg-blue-950'],['Yellow','bg-yellow-300'],['Black','bg-black']].map(([name, color], i) => <button key={name} className={`flex flex-col items-center gap-1 rounded-md p-2 text-[11px] ${i === 0 ? 'border border-primary' : ''}`}><span className={`size-7 rounded-full ${color}`} />{name}</button>)}</div></section>
 
         <section className="mt-5 rounded-xl border bg-card p-4 md:p-6"><h2 className="text-base font-semibold">Product Description</h2><p className="mt-4 text-sm leading-6 text-muted-foreground">Samsung Galaxy A15 (4G) features a 6.5-inch Super AMOLED display, 50MP triple rear camera, 5000mAh battery with 25W fast charging and powerful performance with MediaTek Helio G99 processor.</p><button className="mt-3 flex items-center gap-1 text-sm font-medium text-primary">View More <ChevronDown className="size-4" /></button></section>
+        <section className="mt-8 border-y bg-background md:mt-10"><div className="flex items-center gap-5 overflow-x-auto border-b px-2 py-4 text-sm font-medium md:justify-center"><button className="shrink-0 text-muted-foreground">Overview</button><button className="shrink-0 border-b-2 border-primary pb-4 -mb-[17px] text-primary">Specifications</button><button className="shrink-0 text-muted-foreground">Reviews (324)</button><button className="shrink-0 text-muted-foreground">Compare</button><button className="shrink-0 text-muted-foreground">Q&amp;A</button></div><div className="pt-2"><div className="rounded-xl bg-muted/30 p-1"><SpecificationSection /><ProductContinuation /></div></div></section>
       </Container>
     </main>
     <BottomNav />
