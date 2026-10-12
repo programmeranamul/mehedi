@@ -23,12 +23,14 @@ const mobileIconClass =
 export function SiteHeader({ compareCount = 0, wishlistCount = 0, compactMobile = false }: SiteHeaderProps) {
   const pathname = usePathname()
   const isMorePage = compactMobile || pathname.startsWith('/more')
+  const isNewsPage = pathname.startsWith('/news')
+  const isCompactHeader = isMorePage || isNewsPage
 
   return (
     <header>
       <div className="bg-background">
         <Container className="flex items-center gap-2.5 pt-3 md:h-[86px] md:gap-8 md:pt-0">
-          {!isMorePage && <MobileMenu triggerLabel="Open menu" triggerClassName={`${mobileIconClass} -ml-1.5 md:hidden`}>
+          {!isCompactHeader && <MobileMenu triggerLabel="Open menu" triggerClassName={`${mobileIconClass} -ml-1.5 md:hidden`}>
             <Menu className="size-7" strokeWidth={1.75} aria-hidden="true" />
           </MobileMenu>}
 
@@ -60,7 +62,7 @@ export function SiteHeader({ compareCount = 0, wishlistCount = 0, compactMobile 
           </div>
         </Container>
 
-        {!isMorePage && <Container className="pb-3 pt-3 md:hidden">
+        {!isCompactHeader && <Container className="pb-3 pt-3 md:hidden">
           <HeaderSearch id="mobile-search" variant="pill" placeholder="Search mobile, brand, model..." />
         </Container>}
       </div>
