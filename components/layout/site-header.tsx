@@ -25,13 +25,14 @@ export function SiteHeader({ compareCount = 0, wishlistCount = 0, compactMobile 
   const isMorePage = compactMobile || pathname.startsWith('/more')
   const isNewsPage = pathname.startsWith('/news')
   const isComparePage = pathname.startsWith('/compare')
-  const isCompactHeader = isMorePage || isNewsPage || isComparePage
+  const isProductPage = pathname.startsWith('/phones/')
+  const isCompactHeader = isMorePage || isNewsPage || isComparePage || isProductPage
 
   return (
     <header>
       <div className="bg-background">
         <Container className="flex items-center gap-2.5 pt-3 md:h-[86px] md:gap-8 md:pt-0">
-          {isComparePage && <Link href="/" aria-label="Back to home" className={`${mobileIconClass} -ml-1.5 md:hidden`}><ArrowLeft className="size-7" strokeWidth={1.8} /></Link>}
+          {(isComparePage || isProductPage) && <Link href={isProductPage ? '/phones' : '/'} aria-label="Back" className={`${mobileIconClass} -ml-1.5 md:hidden`}><ArrowLeft className="size-7" strokeWidth={1.8} /></Link>}
           {!isCompactHeader && <MobileMenu triggerLabel="Open menu" triggerClassName={`${mobileIconClass} -ml-1.5 md:hidden`}>
             <Menu className="size-7" strokeWidth={1.75} aria-hidden="true" />
           </MobileMenu>}
@@ -53,10 +54,10 @@ export function SiteHeader({ compareCount = 0, wishlistCount = 0, compactMobile 
               <Search className="size-6" strokeWidth={1.75} aria-hidden="true" />
               <span className="sr-only">Focus search</span>
             </label>}
-            <Link href={isComparePage ? '/compare' : '/notifications'} className={`${mobileIconClass} relative`}>
-              {isComparePage ? <ShoppingCart className="size-6" strokeWidth={1.75} aria-hidden="true" /> : <Bell className="size-6" strokeWidth={1.75} aria-hidden="true" />}
+            <Link href={(isComparePage || isProductPage) ? '/compare' : '/notifications'} className={`${mobileIconClass} relative`}>
+              {(isComparePage || isProductPage) ? <ShoppingCart className="size-6" strokeWidth={1.75} aria-hidden="true" /> : <Bell className="size-6" strokeWidth={1.75} aria-hidden="true" />}
               {!isMorePage && !isComparePage && <span className="sr-only">Notifications</span>}
-              {(isMorePage || isComparePage) && <span className="absolute right-0.5 top-0.5 flex size-4 items-center justify-center rounded-full bg-primary text-[10px] font-semibold text-primary-foreground">2</span>}
+              {(isMorePage || isComparePage || isProductPage) && <span className="absolute right-0.5 top-0.5 flex size-4 items-center justify-center rounded-full bg-primary text-[10px] font-semibold text-primary-foreground">2</span>}
             </Link>
             {isMorePage && <Link href="/more" aria-label="More options" className={mobileIconClass}>
               <Ellipsis className="size-6" strokeWidth={2} aria-hidden="true" />
