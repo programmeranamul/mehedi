@@ -13,7 +13,7 @@ const bengali = Hind_Siliguri({ subsets: ['bengali'], weight: ['400', '500', '60
 
 export const metadata: Metadata = {
   title: {
-    default: 'TechMehedi - Mobile Phone Prices, Specs & Reviews in Bangladesh',
+    default: 'Tech Mehedi - Mobile Phone Prices, Specs & Reviews in Bangladesh',
     template: '%s | TechMehedi',
   },
   description:
