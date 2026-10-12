@@ -13,9 +13,9 @@ export function PriceRangeSlider({ min, max, step = 500, value, onChange }: Pric
   const toPercent = (n: number) => ((n - min) / (max - min)) * 100
 
   return (
-    <div className="relative h-6 md:h-[38px]">
+    <div className="relative h-[clamp(24px,5vw,38px)] md:h-[38px]">
       <div
-        className="absolute top-1/2 h-[9px] -translate-y-1/2 bg-white md:h-[18px]"
+        className="absolute top-1/2 h-[clamp(9px,2.4vw,18px)] -translate-y-1/2 bg-white md:h-[18px]"
         style={{ left: `${toPercent(low)}%`, right: `${100 - toPercent(high)}%` }}
         aria-hidden="true"
       />

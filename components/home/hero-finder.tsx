@@ -45,26 +45,26 @@ export function HeroFinder({ typeOptions, categoryOptions, brandOptions }: HeroF
     <Container className="pt-0.5 md:pt-1.5">
       <section
         aria-labelledby="hero-title"
-        className="relative overflow-hidden rounded-lg bg-[radial-gradient(ellipse_at_70%_40%,var(--hero)_0%,var(--hero-deep)_75%)] shadow-[0_4px_12px_rgba(0,0,0,0.3)] md:rounded-md md:shadow-[0_2px_8px_rgba(0,0,0,0.25)]"
+        className="relative min-h-[clamp(185px,40.8vw,310px)] overflow-hidden rounded-lg bg-[radial-gradient(ellipse_at_70%_40%,var(--hero)_0%,var(--hero-deep)_75%)] shadow-[0_4px_12px_rgba(0,0,0,0.3)] md:min-h-0 md:rounded-md md:shadow-[0_2px_8px_rgba(0,0,0,0.25)]"
       >
         <div className="grid items-center md:grid-cols-[minmax(0,540px)_1fr]">
-          <form onSubmit={handleSubmit} className="relative z-10 pb-3 pl-[11%] pr-[8%] pt-1.5 md:pb-7 md:pl-[34px] md:pr-4 md:pt-3">
+          <form onSubmit={handleSubmit} className="relative z-10 pb-[clamp(12px,3.7vw,28px)] pl-[11%] pr-[8%] pt-[clamp(6px,1.6vw,12px)] md:pb-7 md:pl-[34px] md:pr-4 md:pt-3">
             <div className="flex justify-center md:justify-start md:pl-[68px]">
               <h1
                 id="hero-title"
-                className="border-[1.5px] border-white px-1 font-display text-[22px] font-normal uppercase leading-[26px] text-white md:border-2 md:px-1.5 md:text-[34px] md:leading-[40px]"
+                className="border-[1.5px] border-white px-1 font-display text-[clamp(22px,4.5vw,34px)] font-normal uppercase leading-[clamp(26px,5.3vw,40px)] text-white md:border-2 md:px-1.5 md:text-[34px] md:leading-[40px]"
               >
                 Lets Find A Mobile
               </h1>
             </div>
 
-            <div className="mt-2 grid grid-cols-[minmax(0,1fr)_33%] gap-x-[5%] md:mt-3 md:grid-cols-[1fr_156px] md:gap-[26px]">
+            <div className="mt-[clamp(8px,1.6vw,12px)] grid grid-cols-[minmax(0,1fr)_33%] gap-x-[5%] md:mt-3 md:grid-cols-[1fr_156px] md:gap-[26px]">
               <fieldset className="min-w-0">
                 <legend className="sr-only">Price range in taka</legend>
                 <div className="px-1 md:px-1.5">
                   <PriceRangeSlider min={PRICE_MIN} max={PRICE_MAX} value={range} onChange={setRange} />
                 </div>
-                <div className="mt-2.5 flex items-center gap-3 md:mt-[18px] md:gap-5">
+                <div className="mt-[clamp(10px,2.4vw,18px)] flex items-center gap-[clamp(12px,2.6vw,20px)] md:mt-[18px] md:gap-5">
                   <PriceInput label="Minimum price" value={range[0]} onChange={(v) => updatePrice(0, v)} />
                   <PriceInput label="Maximum price" value={range[1]} onChange={(v) => updatePrice(1, v)} />
                 </div>
@@ -77,10 +77,10 @@ export function HeroFinder({ typeOptions, categoryOptions, brandOptions }: HeroF
               </div>
             </div>
 
-            <div className="mt-4 flex justify-center md:mt-[34px] md:block md:pl-[74px]">
+            <div className="mt-[clamp(16px,4.5vw,34px)] flex justify-center md:mt-[34px] md:block md:pl-[74px]">
               <button
                 type="submit"
-                className="h-[27px] w-[68%] rounded-[3px] bg-[#e4e6ea] font-display text-[17px] uppercase text-[#111] transition-colors hover:bg-white md:h-[44px] md:w-full md:max-w-[355px] md:text-[22px]"
+                className="h-[clamp(27px,5.8vw,44px)] w-[68%] rounded-[3px] bg-[#e4e6ea] font-display text-[clamp(17px,2.9vw,22px)] uppercase text-[#111] transition-colors hover:bg-white md:h-[44px] md:w-full md:max-w-[355px] md:text-[22px]"
               >
                 Find Mobile
               </button>
@@ -107,7 +107,7 @@ function PriceInput({ label, value, onChange }: { label: string; value: number; 
   const id = `price-${label.toLowerCase().replace(/\s+/g, '-')}`
   return (
     <div className="flex flex-1 items-center gap-0.5 md:gap-1">
-      <span className="font-display text-[17px] leading-none text-white md:text-[26px]" aria-hidden="true">
+      <span className="font-display text-[clamp(17px,3.4vw,26px)] leading-none text-white md:text-[26px]" aria-hidden="true">
         TK.
       </span>
       <label htmlFor={id} className="sr-only">
@@ -118,7 +118,7 @@ function PriceInput({ label, value, onChange }: { label: string; value: number; 
         inputMode="numeric"
         value={value}
         onChange={(event) => onChange(event.target.value)}
-        className="h-4 w-full min-w-0 rounded-[2px] bg-[#e4e6ea] text-center font-display text-[12px] md:h-[27px] md:text-[19px] text-[#111] focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+        className="h-[clamp(16px,3.6vw,27px)] w-full min-w-0 rounded-[2px] bg-[#e4e6ea] text-center font-display text-[clamp(12px,2.5vw,19px)] text-[#111] focus:outline-none focus-visible:ring-2 focus-visible:ring-white md:h-[27px] md:text-[19px]"
       />
     </div>
   )
