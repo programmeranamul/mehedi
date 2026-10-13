@@ -4,13 +4,13 @@ export const siteConfig = {
   name: 'TechMehedi',
   tagline: 'Smart Choice, Better Life',
   description: 'Your trusted source for smartphone prices, specs, reviews and tech news in Bangladesh.',
-  email: 'contact@techmehedi.com',
+  email: 'techmehedi34@gmail.com',
   location: 'Dhaka, Bangladesh',
   socials: [
-    { label: 'Facebook', href: 'https://facebook.com', icon: '/social/facebook.svg' },
-    { label: 'YouTube', href: 'https://youtube.com', icon: '/social/youtube.svg' },
-    { label: 'TikTok', href: 'https://tiktok.com', icon: '/social/tiktok.svg' },
-    { label: 'Instagram', href: 'https://instagram.com', icon: '/social/instagram.svg' },
+    { label: 'Facebook', href: 'https://www.facebook.com/techmehedie', icon: '/social/facebook.svg' },
+    { label: 'YouTube', href: 'https://www.youtube.com/@TechMehedie', icon: '/social/youtube.svg' },
+    { label: 'TikTok', href: 'https://www.tiktok.com/@techmehedie', icon: '/social/tiktok.svg' },
+    { label: 'Instagram', href: 'https://www.instagram.com/techmehedie/', icon: '/social/instagram.svg' },
   ],
 }
 
