@@ -54,11 +54,12 @@ export default async function HomePage() {
         </Rail>
       </Section>
 
-      <Section title="Compare Phones" viewAllHref="/compare" className="pt-3 md:pt-7">
+      <Section title="Compare Phones" viewAllHref="/compare" className="pt-3 md:pt-7 w-full overflow-hidden">
         <Rail className="md:grid-cols-2 md:gap-3 lg:grid-cols-4" itemClassName="w-[30vw] min-w-[116px]">
           {comparisons.map((comparison) => (
             <CompareCard key={comparison.id} comparison={comparison} />
           ))}
+         
         </Rail>
       </Section>
 
@@ -70,7 +71,7 @@ export default async function HomePage() {
         </div>
       </Section>
 
-      <FeaturesStrip />
+      <FeaturesStrip /> 
     </>
   )
 }

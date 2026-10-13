@@ -44,12 +44,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${oswald.variable} ${bengali.variable}`}>
-      <body className="flex min-h-svh flex-col pb-16 antialiased md:pb-0">
+      <body className="flex min-h-vh flex-col pb-16 antialiased md:pb-0">
         <ThemeProvider>
-          <SiteHeader />
+          {/* <SiteHeader /> */}
           <main className="flex-1">{children}</main>
-          <SiteFooter />
-          <BottomNav />
+          {/* <SiteFooter /> */}
+          {/* <BottomNav /> */}
         </ThemeProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
