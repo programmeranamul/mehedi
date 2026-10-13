@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Ellipsis, House, Newspaper, Scale, Smartphone, type LucideIcon } from 'lucide-react'
+import { Ellipsis, House, Laptop, Newspaper, Scale, Smartphone, type LucideIcon } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const tabs: { label: string; href: string; icon: LucideIcon }[] = [
@@ -16,6 +16,10 @@ const tabClass = 'flex h-full flex-col items-center justify-center gap-1 text-[1
 
 export function BottomNav() {
   const pathname = usePathname()
+  const isLaptopArea = pathname.startsWith('/laptops')
+  const navigationTabs = isLaptopArea
+    ? [{ label: 'Home', href: '/', icon: House }, { label: 'Laptops', href: '/laptops', icon: Laptop }, { label: 'Compare', href: '/compare', icon: Scale }, { label: 'Reviews', href: '/laptops/reviews', icon: Newspaper }]
+    : tabs
 
   return (
     <nav
@@ -23,7 +27,7 @@ export function BottomNav() {
       className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-background pb-[env(safe-area-inset-bottom)] shadow-[0_-2px_10px_rgba(15,23,42,0.06)] md:hidden"
     >
       <ul className="grid h-16 grid-cols-5">
-        {tabs.map(({ label, href, icon: Icon }) => {
+        {navigationTabs.map(({ label, href, icon: Icon }) => {
           const active = href === '/' ? pathname === '/' : pathname.startsWith(href)
           return (
             <li key={href}>
