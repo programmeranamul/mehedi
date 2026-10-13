@@ -83,7 +83,6 @@ function FeatureItem({ label, value, Icon }: { label: string; value: string; Ico
 
 export function ProductDetailPage() {
   return <div className="min-h-screen bg-background pb-24 md:pb-8">
-    // <SiteHeader />
     <main>
       <Container className="pt-3 md:pt-6">
         <nav aria-label="Breadcrumb" className="mb-4 flex items-center gap-2 overflow-hidden whitespace-nowrap text-[12px] text-muted-foreground md:text-sm">
