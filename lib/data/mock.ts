@@ -40,3 +40,24 @@ export const articles: Article[] = [
   { id: '3', slug: 'samsung-galaxy-m15-5g-officially-announced', title: 'Samsung Galaxy M15 5G Officially Announced', category: 'news', publishedAt: '2024-05-20', image: '/images/news/galaxy-m15.png' },
   { id: '4', slug: 'mobile-battery-charge-tips', title: 'মোবাইল ব্যাটারির চার্জ ভালোভাবে রাখার ১০ টি উপায়', category: 'tips', publishedAt: '2024-05-18', image: '/images/news/battery-tips.png' },
 ]
+
+export const laptops = [
+  {
+    name: "MacBook Air M2",
+    specs: "13.6” | 8GB | 256GB",
+    price: "89,999",
+    image: "/images/laptops/macbook-air-m2.png",
+  },
+  {
+    name: "ASUS TUF Gaming F15",
+    specs: "15.6” | 16GB | 512GB",
+    price: "94,999",
+    image: "/images/laptops/asus-tuf-f15.png",
+  },
+  {
+    name: "HP Pavilion 15",
+    specs: "15.6” | 8GB | 512GB",
+    price: "72,999",
+    image: "/images/laptops/hp-pavilion-15.png",
+  },
+];
