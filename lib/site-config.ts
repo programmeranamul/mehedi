@@ -77,14 +77,14 @@ export const footerColumns: FooterColumn[] = [
       { label: 'Compare Phones', href: '/compare' },
     ],
   },
-  {
-    title: 'Popular Brands',
-    links: [
-      { label: 'Samsung', href: '/brands/samsung' },
-      { label: 'Xiaomi', href: '/brands/xiaomi' },
-      { label: 'Realme', href: '/brands/realme' },
-      { label: 'Infinix', href: '/brands/infinix' },
-      { label: 'Apple', href: '/brands/apple' },
-    ],
-  },
+  // {
+  //   title: 'Popular Brands',
+  //   links: [
+  //     { label: 'Samsung', href: '/brands/samsung' },
+  //     { label: 'Xiaomi', href: '/brands/xiaomi' },
+  //     { label: 'Realme', href: '/brands/realme' },
+  //     { label: 'Infinix', href: '/brands/infinix' },
+  //     { label: 'Apple', href: '/brands/apple' },
+  //   ],
+  // },
 ]

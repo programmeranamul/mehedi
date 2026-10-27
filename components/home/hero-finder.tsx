@@ -1,58 +1,72 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import { useRouter } from 'next/navigation'
-import { useState } from 'react'
-import { Container } from '@/components/layout/container'
-import { HeroSelect } from '@/components/home/hero-select'
-import { PriceRangeSlider } from '@/components/home/price-range-slider'
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { Container } from "@/components/layout/container";
+import { HeroSelect } from "@/components/home/hero-select";
+import { PriceRangeSlider } from "@/components/shared/price-range-slider";
+import Link from "next/link";
+import { getPopularPhones } from "@/lib/api";
+import FeaturesPhone from "./features-phone";
 
-const PRICE_MIN = 1000
-const PRICE_MAX = 100000
+const PRICE_MIN = 1000;
+const PRICE_MAX = 500000;
 
-type Option = { label: string; value: string }
+type Option = { label: string; value: string };
 
 type HeroFinderProps = {
-  typeOptions: Option[]
-  categoryOptions: Option[]
-  brandOptions: Option[]
-}
+  typeOptions: Option[];
+  categoryOptions: Option[];
+  brandOptions: Option[];
+};
 
-export function HeroFinder({ typeOptions, categoryOptions, brandOptions }: HeroFinderProps) {
-  const router = useRouter()
-  const [range, setRange] = useState<[number, number]>([PRICE_MIN, PRICE_MAX])
-  const [type, setType] = useState('')
-  const [category, setCategory] = useState('')
-  const [brand, setBrand] = useState('')
+export function HeroFinder({
+  typeOptions,
+  categoryOptions,
+  brandOptions,
+  phones,
+}: HeroFinderProps) {
+  const router = useRouter();
+  const [range, setRange] = useState<[number, number]>([PRICE_MIN, PRICE_MAX]);
+  const [type, setType] = useState("");
+  const [category, setCategory] = useState("");
+  const [brand, setBrand] = useState("");
 
   function updatePrice(index: 0 | 1, raw: string) {
-    const parsed = Number(raw.replace(/\D/g, ''))
-    const next: [number, number] = [...range]
-    next[index] = Math.min(Math.max(parsed || 0, 0), PRICE_MAX * 10)
-    setRange(next)
+    const parsed = Number(raw.replace(/\D/g, ""));
+    const next: [number, number] = [...range];
+    next[index] = Math.min(Math.max(parsed || 0, 0), PRICE_MAX * 10);
+    setRange(next);
   }
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-    const params = new URLSearchParams({ min: String(range[0]), max: String(range[1]) })
-    if (type) params.set('type', type)
-    if (category) params.set('category', category)
-    if (brand) params.set('brand', brand)
-    router.push(`/phone-finder?${params.toString()}`)
+    event.preventDefault();
+    const params = new URLSearchParams({
+      min: String(range[0]),
+      max: String(range[1]),
+    });
+    if (type) params.set("type", type);
+    if (category) params.set("category", category);
+    if (brand) params.set("brand", brand);
+    router.push(`/phone-finder?${params.toString()}`);
   }
 
   return (
-    <Container className="pt-0.5 md:pt-1.5">
+    <Container className="pt-0.5 md:pt-1.5 mt-10">
       <section
         aria-labelledby="hero-title"
-        className="relative min-h-[clamp(185px,40.8vw,310px)] overflow-hidden rounded-lg bg-[radial-gradient(ellipse_at_70%_40%,var(--hero)_0%,var(--hero-deep)_75%)] shadow-[0_4px_12px_rgba(0,0,0,0.3)] md:min-h-0 md:rounded-md md:shadow-[0_2px_8px_rgba(0,0,0,0.25)]"
+        className="relative min-h-[clamp(185px,40.8vw,310px)] overflow-hidden rounded-lg  md:min-h-0 md:rounded-md "
       >
-        <div className="grid items-center md:grid-cols-[minmax(0,540px)_1fr]">
-          <form onSubmit={handleSubmit} className="relative z-10 pb-[clamp(12px,3.7vw,28px)] pl-[11%] pr-[8%] pt-[clamp(6px,1.6vw,12px)] md:pb-7 md:pl-[34px] md:pr-4 md:pt-3">
+        <div className="grid gap-8 items-center grid-cols-12">
+          <form
+            onSubmit={handleSubmit}
+            className="relative col-span-8 z-10 pb-[clamp(12px,3.7vw,28px)] pl-[11%] pr-[8%] pt-[clamp(6px,1.6vw,12px)] md:pb-7 md:pl-[34px] md:pr-4 md:pt-3 border border-border h-full"
+          >
             <div className="flex justify-center md:justify-start md:pl-[68px]">
               <h1
                 id="hero-title"
-                className="border-[1.5px] border-white px-1 font-display text-[clamp(22px,4.5vw,34px)] font-normal uppercase leading-[clamp(26px,5.3vw,40px)] text-white md:border-2 md:px-1.5 md:text-[34px] md:leading-[40px]"
+                className="border-[1.5px] border-white px-1 font-display text-[clamp(22px,4.5vw,34px)] font-normal uppercase leading-[clamp(26px,5.3vw,40px)]  md:border-2 md:px-1.5 md:text-[34px] md:leading-[40px]"
               >
                 Lets Find A Mobile
               </h1>
@@ -62,18 +76,49 @@ export function HeroFinder({ typeOptions, categoryOptions, brandOptions }: HeroF
               <fieldset className="min-w-0">
                 <legend className="sr-only">Price range in taka</legend>
                 <div className="px-1 md:px-1.5">
-                  <PriceRangeSlider min={PRICE_MIN} max={PRICE_MAX} value={range} onChange={setRange} />
+                  <PriceRangeSlider
+                    min={PRICE_MIN}
+                    max={PRICE_MAX}
+                    value={range}
+                    onChange={setRange}
+                  />
                 </div>
                 <div className="mt-[clamp(10px,2.4vw,18px)] flex items-center gap-[clamp(12px,2.6vw,20px)] md:mt-[18px] md:gap-5">
-                  <PriceInput label="Minimum price" value={range[0]} onChange={(v) => updatePrice(0, v)} />
-                  <PriceInput label="Maximum price" value={range[1]} onChange={(v) => updatePrice(1, v)} />
+                  <PriceInput
+                    label="Minimum price"
+                    value={range[0]}
+                    onChange={(v) => updatePrice(0, v)}
+                  />
+                  <PriceInput
+                    label="Maximum price"
+                    value={range[1]}
+                    onChange={(v) => updatePrice(1, v)}
+                  />
                 </div>
               </fieldset>
 
               <div className="flex flex-col gap-[5px] pt-1.5 md:gap-2.5 md:pt-3">
-                <HeroSelect name="type" label="Mobile" options={typeOptions} value={type} onChange={setType} />
-                <HeroSelect name="category" label="Category" options={categoryOptions} value={category} onChange={setCategory} />
-                <HeroSelect name="brand" label="Brand" options={brandOptions} value={brand} onChange={setBrand} />
+                <HeroSelect
+                  name="type"
+                  label="Mobile"
+                  options={typeOptions}
+                  value={type}
+                  onChange={setType}
+                />
+                <HeroSelect
+                  name="category"
+                  label="Category"
+                  options={categoryOptions}
+                  value={category}
+                  onChange={setCategory}
+                />
+                <HeroSelect
+                  name="brand"
+                  label="Brand"
+                  options={brandOptions}
+                  value={brand}
+                  onChange={setBrand}
+                />
               </div>
             </div>
 
@@ -87,27 +132,31 @@ export function HeroFinder({ typeOptions, categoryOptions, brandOptions }: HeroF
             </div>
           </form>
 
-          <div className="relative hidden h-full min-h-[274px] md:block">
-            <Image
-              src="/images/hero-phones.png"
-              alt="Latest smartphones in multiple colors"
-              fill
-              priority
-              sizes="(min-width: 1024px) 480px, 45vw"
-              className="object-contain object-center"
-            />
+          <div className="relative col-span-4 hidden h-full min-h-[274px] md:block">
+            <FeaturesPhone phones={phones} />
           </div>
         </div>
       </section>
     </Container>
-  )
+  );
 }
 
-function PriceInput({ label, value, onChange }: { label: string; value: number; onChange: (value: string) => void }) {
-  const id = `price-${label.toLowerCase().replace(/\s+/g, '-')}`
+function PriceInput({
+  label,
+  value,
+  onChange,
+}: {
+  label: string;
+  value: number;
+  onChange: (value: string) => void;
+}) {
+  const id = `price-${label.toLowerCase().replace(/\s+/g, "-")}`;
   return (
     <div className="flex flex-1 items-center gap-0.5 md:gap-1">
-      <span className="font-display text-[clamp(17px,3.4vw,26px)] leading-none text-white md:text-[26px]" aria-hidden="true">
+      <span
+        className="font-display text-[clamp(17px,3.4vw,26px)] leading-none text-white md:text-[26px]"
+        aria-hidden="true"
+      >
         TK.
       </span>
       <label htmlFor={id} className="sr-only">
@@ -121,5 +170,5 @@ function PriceInput({ label, value, onChange }: { label: string; value: number; 
         className="h-[clamp(16px,3.6vw,27px)] w-full min-w-0 rounded-[2px] bg-[#e4e6ea] text-center font-display text-[clamp(12px,2.5vw,19px)] text-[#111] focus:outline-none focus-visible:ring-2 focus-visible:ring-white md:h-[27px] md:text-[19px]"
       />
     </div>
-  )
+  );
 }

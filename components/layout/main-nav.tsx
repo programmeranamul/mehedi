@@ -9,7 +9,7 @@ const itemClass =
 
 export function MainNav() {
   return (
-    <nav aria-label="Main" className="hidden bg-navy md:block">
+    <nav aria-label="Main" className="hidden bg-[#1d6ae5] md:block">
       <Container className="flex h-[46px] items-center gap-6">
         <ul className="flex h-full flex-1 items-center gap-6 overflow-x-auto lg:gap-[26px] lg:overflow-visible [&::-webkit-scrollbar]:hidden">
           <li className="h-full">
@@ -39,7 +39,7 @@ export function MainNav() {
 
 function BangladeshFlag() {
   return (
-    <svg viewBox="0 0 20 14" className="h-3.5 w-5 rounded-[2px]" aria-hidden="true">
+    <svg viewBox="0 0 20 14" className="h-3.5 w-5 rounded-[2px] border border-white" aria-hidden="true">
       <rect width="20" height="14" fill="#006a4e" />
       <circle cx="9" cy="7" r="4" fill="#f42a41" />
     </svg>

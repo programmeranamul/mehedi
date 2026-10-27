@@ -124,9 +124,11 @@
 .dual-range::-webkit-slider-runnable-track {
   background: transparent;
   height: 38px;
+  /* background: #1d6ae5; */
 }
 .dual-range::-moz-range-track {
   background: transparent;
+   /* background: #1d6ae5; */
   height: 38px;
 }
 .dual-range::-webkit-slider-thumb {
@@ -135,7 +137,7 @@
   width: 18px;
   height: 38px;
   border-radius: 4px;
-  background: #e3141c;
+  /* background: #1d6ae5; */
   border: none;
   cursor: grab;
 }
@@ -144,7 +146,7 @@
   width: 18px;
   height: 38px;
   border-radius: 4px;
-  background: #e3141c;
+  /* background: #1d6ae5; */
   border: none;
   cursor: grab;
 }
@@ -165,6 +167,22 @@
     height: 24px;
     border-radius: 3px;
   }
+}
+.dual-range-filter::-webkit-slider-runnable-track {
+  height: 28px;
+}
+.dual-range-filter::-moz-range-track {
+  height: 28px;
+}
+.dual-range-filter::-webkit-slider-thumb {
+  width: 14px;
+  height: 28px;
+  background: #dc2626;
+}
+.dual-range-filter::-moz-range-thumb {
+  width: 14px;
+  height: 28px;
+  background: #dc2626;
 }
 .dual-range:focus-visible::-webkit-slider-thumb {
   outline: 2px solid #ffffff;

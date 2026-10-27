@@ -1,0 +1,809 @@
+{
+    "success": true,
+    "data": {
+        "phones": [
+            {
+                "_id": "6adfd3e933546abfaa2f962e",
+                "slug": "oneplus-21",
+                "name": "OnePlus 21",
+                "brand": "OnePlus",
+                "image": "/images/phones/mob.webp",
+                "price": null,
+                "priceStatus": "Upcoming",
+                "marketStatus": "Available",
+                "score": 88,
+                "releaseDate": "12-Oct-2026",
+                "variant": "12GB+256GB"
+            },
+            {
+                "_id": "6adf666446e15dd375407930",
+                "slug": "oneplus-17",
+                "name": "OnePlus 17",
+                "brand": "OnePlus",
+                "image": "/images/phones/mob.webp",
+                "price": 130000,
+                "priceStatus": "Unofficial",
+                "marketStatus": "Available",
+                "score": 88,
+                "releaseDate": "12-Oct-2026",
+                "variant": "12GB+256GB"
+            }
+        ],
+        "specificationGroups": [
+            {
+                "key": "general",
+                "title": "General",
+                "items": [
+                    {
+                        "key": "brand",
+                        "label": "Brand",
+                        "values": [
+                            "OnePlus",
+                            "OnePlus"
+                        ]
+                    },
+                    {
+                        "key": "model",
+                        "label": "Model",
+                        "values": [
+                            "16",
+                            "16"
+                        ]
+                    },
+                    {
+                        "key": "deviceType",
+                        "label": "Device Type",
+                        "values": [
+                            "Smartphone",
+                            "Smartphone"
+                        ]
+                    },
+                    {
+                        "key": "releaseDate",
+                        "label": "Release Date",
+                        "values": [
+                            "12 October 2026",
+                            "12 October 2026"
+                        ]
+                    },
+                    {
+                        "key": "status",
+                        "label": "Status",
+                        "values": [
+                            "Available",
+                            "Available"
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "hardwareSoftware",
+                "title": "Hardware & Software",
+                "items": [
+                    {
+                        "key": "operatingSystem",
+                        "label": "Operating System",
+                        "values": [
+                            "Android",
+                            "Android"
+                        ]
+                    },
+                    {
+                        "key": "osVersion",
+                        "label": "OS Version",
+                        "values": [
+                            "v17",
+                            "v17"
+                        ]
+                    },
+                    {
+                        "key": "userInterface",
+                        "label": "User Interface",
+                        "values": [
+                            "OxygenOS 17",
+                            "OxygenOS 17"
+                        ]
+                    },
+                    {
+                        "key": "chipset",
+                        "label": "Chipset",
+                        "values": [
+                            "Qualcomm SM8975 Snapdragon 8 Elite Extreme Gen 6",
+                            "Qualcomm SM8975 Snapdragon 8 Elite Extreme Gen 6"
+                        ]
+                    },
+                    {
+                        "key": "cpu",
+                        "label": "CPU",
+                        "values": [
+                            "Octa-core (2x5.01 GHz Prime + 3x4.03 GHz Performance + 3x3.74 GHz Performance)",
+                            "Octa-core (2x5.01 GHz Prime + 3x4.03 GHz Performance + 3x3.74 GHz Performance)"
+                        ]
+                    },
+                    {
+                        "key": "cpuCores",
+                        "label": "CPU Cores",
+                        "values": [
+                            "8 Cores",
+                            "8 Cores"
+                        ]
+                    },
+                    {
+                        "key": "architecture",
+                        "label": "Architecture",
+                        "values": [
+                            "64 bit",
+                            "64 bit"
+                        ]
+                    },
+                    {
+                        "key": "fabrication",
+                        "label": "Fabrication",
+                        "values": [
+                            "2 nm",
+                            "2 nm"
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "display",
+                "title": "Display",
+                "items": [
+                    {
+                        "key": "displayType",
+                        "label": "Display Type",
+                        "values": [
+                            "TFT",
+                            "Not specified"
+                        ]
+                    },
+                    {
+                        "key": "displaySize",
+                        "label": "Display Size",
+                        "values": [
+                            "2.8 inches, 24.3 cm2",
+                            "6.78\" 1272x2772p"
+                        ]
+                    },
+                    {
+                        "key": "resolution",
+                        "label": "Resolution",
+                        "values": [
+                            "240x320 px",
+                            "Not specified"
+                        ]
+                    },
+                    {
+                        "key": "screenProtection",
+                        "label": "Screen Protection",
+                        "values": [
+                            "Gorilla Glass",
+                            "Not specified"
+                        ]
+                    },
+                    {
+                        "key": "touchScreen",
+                        "label": "Touch Screen",
+                        "values": [
+                            "Yes",
+                            "Not specified"
+                        ]
+                    },
+                    {
+                        "key": "features",
+                        "label": "Features",
+                        "values": [
+                            "QWERTY keypad",
+                            "Not specified"
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "cameras",
+                "title": "Cameras",
+                "items": [
+                    {
+                        "key": "primaryCamera",
+                        "label": "Primary Camera",
+                        "values": [
+                            "200+50+50MP",
+                            "200+50+50MP"
+                        ]
+                    },
+                    {
+                        "key": "selfieCamera",
+                        "label": "Selfie Camera",
+                        "values": [
+                            "50MP",
+                            "50MP"
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "primaryCamera",
+                "title": "Primary Camera",
+                "items": [
+                    {
+                        "key": "cameraSetup",
+                        "label": "Camera Setup",
+                        "values": [
+                            "Triple",
+                            "Triple"
+                        ]
+                    },
+                    {
+                        "key": "resolution",
+                        "label": "Resolution",
+                        "values": [
+                            "200 MP, f/1.6, Wide Angle, Primary Camera, 50 MP, f/2.6, Telephoto Camera, 50 MP, f/2.0, Ultra-Wide Angle Camera",
+                            "200 MP, f/1.6, Wide Angle, Primary Camera, 50 MP, f/2.6, Telephoto Camera, 50 MP, f/2.0, Ultra-Wide Angle Camera"
+                        ]
+                    },
+                    {
+                        "key": "autofocus",
+                        "label": "Autofocus",
+                        "values": [
+                            "Yes",
+                            "Yes"
+                        ]
+                    },
+                    {
+                        "key": "ois",
+                        "label": "OIS",
+                        "values": [
+                            "Yes",
+                            "Yes"
+                        ]
+                    },
+                    {
+                        "key": "flash",
+                        "label": "Flash",
+                        "values": [
+                            "LED Flash",
+                            "LED Flash"
+                        ]
+                    },
+                    {
+                        "key": "imageResolution",
+                        "label": "Image Resolution",
+                        "values": [
+                            "16000 x 12500 Pixels",
+                            "16000 x 12500 Pixels"
+                        ]
+                    },
+                    {
+                        "key": "settings",
+                        "label": "Settings",
+                        "values": [
+                            "Exposure compensation, ISO control",
+                            "Exposure compensation, ISO control"
+                        ]
+                    },
+                    {
+                        "key": "zoom",
+                        "label": "Zoom",
+                        "values": [
+                            "120x Digital Zoom",
+                            "120x Digital Zoom"
+                        ]
+                    },
+                    {
+                        "key": "shootingModes",
+                        "label": "Shooting Modes",
+                        "values": [
+                            "Continuous Shooting, High Dynamic Range mode (HDR)",
+                            "Continuous Shooting, High Dynamic Range mode (HDR)"
+                        ]
+                    },
+                    {
+                        "key": "aperture",
+                        "label": "Aperture",
+                        "values": [
+                            "f/1.6",
+                            "f/1.6"
+                        ]
+                    },
+                    {
+                        "key": "cameraFeatures",
+                        "label": "Camera Features",
+                        "values": [
+                            "Auto Flash, Face detection, Touch to focus, Videos, Portraits, Night Scenes, Panoramics, Slow Motion, Long Exposure, Time-lapse Photography, Cute Animations, High-Resolution Cameras, Underwater Cameras, Master Cameras, AI ID Photos, Super Text, Scan",
+                            "Auto Flash, Face detection, Touch to focus, Videos, Portraits, Night Scenes, Panoramics, Slow Motion, Long Exposure, Time-lapse Photography, Cute Animations, High-Resolution Cameras, Underwater Cameras, Master Cameras, AI ID Photos, Super Text, Scan"
+                        ]
+                    },
+                    {
+                        "key": "videoRecording",
+                        "label": "Video Recording",
+                        "values": [
+                            "7680x4320, 3840x2160, 1920x1080",
+                            "7680x4320, 3840x2160, 1920x1080"
+                        ]
+                    },
+                    {
+                        "key": "videoFps",
+                        "label": "Video FPS",
+                        "values": [
+                            "30 fps, 60 fps, 120 fps",
+                            "30 fps, 60 fps, 120 fps"
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "selfieCamera",
+                "title": "Selfie Camera",
+                "items": [
+                    {
+                        "key": "cameraSetup",
+                        "label": "Camera Setup",
+                        "values": [
+                            "Single",
+                            "Single"
+                        ]
+                    },
+                    {
+                        "key": "resolution",
+                        "label": "Resolution",
+                        "values": [
+                            "50 MP, f/2.0, Wide Angle Camera",
+                            "50 MP, f/2.0, Wide Angle Camera"
+                        ]
+                    },
+                    {
+                        "key": "videoRecording",
+                        "label": "Video Recording",
+                        "values": [
+                            "3840x2160, 1920x1080",
+                            "3840x2160, 1920x1080"
+                        ]
+                    },
+                    {
+                        "key": "videoFps",
+                        "label": "Video FPS",
+                        "values": [
+                            "30 fps, 60 fps",
+                            "30 fps, 60 fps"
+                        ]
+                    },
+                    {
+                        "key": "aperture",
+                        "label": "Aperture",
+                        "values": [
+                            "f/2.0",
+                            "f/2.0"
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "design",
+                "title": "Design",
+                "items": [
+                    {
+                        "key": "height",
+                        "label": "Height",
+                        "values": [
+                            "161.42 mm",
+                            "161.42 mm"
+                        ]
+                    },
+                    {
+                        "key": "width",
+                        "label": "Width",
+                        "values": [
+                            "76.67 mm",
+                            "76.67 mm"
+                        ]
+                    },
+                    {
+                        "key": "thickness",
+                        "label": "Thickness",
+                        "values": [
+                            "8.55 mm (Silver), 8.45 mm (Orange), 8.50 mm (Black)",
+                            "8.55 mm (Silver), 8.45 mm (Orange), 8.50 mm (Black)"
+                        ]
+                    },
+                    {
+                        "key": "weight",
+                        "label": "Weight",
+                        "values": [
+                            "220 grams (Silver, Black), 217 grams (Orange)",
+                            "220 grams (Silver, Black), 217 grams (Orange)"
+                        ]
+                    },
+                    {
+                        "key": "build",
+                        "label": "Build",
+                        "values": [
+                            "Glass front (Crystal Shield Glass), aluminum frame, glass back (Crystal Shield Glass) or glass-fiber reinforced plastic back",
+                            "Glass front (Crystal Shield Glass), aluminum frame, glass back (Crystal Shield Glass) or glass-fiber reinforced plastic back"
+                        ]
+                    },
+                    {
+                        "key": "colors",
+                        "label": "Colors",
+                        "values": [
+                            "Silver, Orange, Black",
+                            "Silver, Orange, Black"
+                        ]
+                    },
+                    {
+                        "key": "waterproof",
+                        "label": "Waterproof",
+                        "values": [
+                            "Water resistant (up to 2m for 30 min)",
+                            "Water resistant (up to 2m for 30 min)"
+                        ]
+                    },
+                    {
+                        "key": "ipRating",
+                        "label": "IP Rating",
+                        "values": [
+                            "IP68/IP69K",
+                            "IP68/IP69K"
+                        ]
+                    },
+                    {
+                        "key": "ruggedness",
+                        "label": "Ruggedness",
+                        "values": [
+                            "Dust proof",
+                            "Dust proof"
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "battery",
+                "title": "Battery",
+                "items": [
+                    {
+                        "key": "batteryType",
+                        "label": "Battery Type",
+                        "values": [
+                            "Li-Ion (Lithium Ion)",
+                            "Li-Ion (Lithium Ion)"
+                        ]
+                    },
+                    {
+                        "key": "batteryCapacity",
+                        "label": "Battery Capacity",
+                        "values": [
+                            "9000 mAh",
+                            "9000 mAh"
+                        ]
+                    },
+                    {
+                        "key": "wirelessCharging",
+                        "label": "Wireless Charging",
+                        "values": [
+                            "50W wireless",
+                            "50W wireless"
+                        ]
+                    },
+                    {
+                        "key": "quickCharging",
+                        "label": "Quick Charging",
+                        "values": [
+                            "100W wired, 44/100W UFCS, 55W PPS, 18W PD/QC",
+                            "100W wired, 44/100W UFCS, 55W PPS, 18W PD/QC"
+                        ]
+                    },
+                    {
+                        "key": "reverseCharging",
+                        "label": "Reverse Charging",
+                        "values": [
+                            "5W reverse wired",
+                            "5W reverse wired"
+                        ]
+                    },
+                    {
+                        "key": "placement",
+                        "label": "Placement",
+                        "values": [
+                            "Non-removable",
+                            "Non-removable"
+                        ]
+                    },
+                    {
+                        "key": "usbTypeC",
+                        "label": "USB Type-C",
+                        "values": [
+                            "USB Type-C 3.2 Gen 1",
+                            "USB Type-C 3.2 Gen 1"
+                        ]
+                    },
+                    {
+                        "key": "battery",
+                        "label": "Battery",
+                        "values": [
+                            "Li-Ion 9000mAh",
+                            "Li-Ion 9000mAh"
+                        ]
+                    },
+                    {
+                        "key": "fastCharging",
+                        "label": "Fast Charging",
+                        "values": [
+                            "100W",
+                            "100W"
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "memory",
+                "title": "Memory",
+                "items": [
+                    {
+                        "key": "storage",
+                        "label": "Internal Storage",
+                        "values": [
+                            "256 GB",
+                            "256 GB"
+                        ]
+                    },
+                    {
+                        "key": "storageType",
+                        "label": "Storage Type",
+                        "values": [
+                            "UFS 4.1",
+                            "UFS 4.1"
+                        ]
+                    },
+                    {
+                        "key": "usbOtg",
+                        "label": "USB OTG",
+                        "values": [
+                            "Yes",
+                            "Yes"
+                        ]
+                    },
+                    {
+                        "key": "ram",
+                        "label": "RAM",
+                        "values": [
+                            "12 GB",
+                            "12 GB"
+                        ]
+                    },
+                    {
+                        "key": "ramType",
+                        "label": "RAM Type",
+                        "values": [
+                            "LPDDR5X Ultra",
+                            "LPDDR5X Ultra"
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "networkConnectivity",
+                "title": "Network & Connectivity",
+                "items": [
+                    {
+                        "key": "network",
+                        "label": "Network",
+                        "values": [
+                            "2G, 3G, 4G, 5G",
+                            "2G, 3G, 4G, 5G"
+                        ]
+                    },
+                    {
+                        "key": "simSlot",
+                        "label": "SIM Slot",
+                        "values": [
+                            "Dual SIM, GSM+GSM",
+                            "Dual SIM, GSM+GSM"
+                        ]
+                    },
+                    {
+                        "key": "simSize",
+                        "label": "SIM Size",
+                        "values": [
+                            "SIM1: Nano, SIM2: Nano",
+                            "SIM1: Nano, SIM2: Nano"
+                        ]
+                    },
+                    {
+                        "key": "edge",
+                        "label": "EDGE",
+                        "values": [
+                            "Available",
+                            "Available"
+                        ]
+                    },
+                    {
+                        "key": "gprs",
+                        "label": "GPRS",
+                        "values": [
+                            "Available",
+                            "Available"
+                        ]
+                    },
+                    {
+                        "key": "voLte",
+                        "label": "VoLTE",
+                        "values": [
+                            "Yes",
+                            "Yes"
+                        ]
+                    },
+                    {
+                        "key": "speed",
+                        "label": "Speed",
+                        "values": [
+                            "HSPA, LTE, 5G",
+                            "HSPA, LTE, 5G"
+                        ]
+                    },
+                    {
+                        "key": "wlan",
+                        "label": "WLAN",
+                        "values": [
+                            "Wi-Fi 7 (802.11 a/b/g/n/ac/be/ax) 5GHz, MIMO",
+                            "Wi-Fi 7 (802.11 a/b/g/n/ac/be/ax) 5GHz, MIMO"
+                        ]
+                    },
+                    {
+                        "key": "bluetooth",
+                        "label": "Bluetooth",
+                        "values": [
+                            "v6.0",
+                            "v6.0"
+                        ]
+                    },
+                    {
+                        "key": "gps",
+                        "label": "GPS",
+                        "values": [
+                            "Yes with A-GPS, Glonass",
+                            "Yes with A-GPS, Glonass"
+                        ]
+                    },
+                    {
+                        "key": "infrared",
+                        "label": "Infrared",
+                        "values": [
+                            "Yes",
+                            "Yes"
+                        ]
+                    },
+                    {
+                        "key": "wiFiHotspot",
+                        "label": "Wi-fi Hotspot",
+                        "values": [
+                            "Yes",
+                            "Yes"
+                        ]
+                    },
+                    {
+                        "key": "nfc",
+                        "label": "NFC",
+                        "values": [
+                            "Yes",
+                            "Yes"
+                        ]
+                    },
+                    {
+                        "key": "usb",
+                        "label": "USB",
+                        "values": [
+                            "Mass storage device, USB charging",
+                            "Mass storage device, USB charging"
+                        ]
+                    },
+                    {
+                        "key": "connectivity",
+                        "label": "Connectivity",
+                        "values": [
+                            "Wi-Fi 7, Bluetooth 6.0",
+                            "Wi-Fi 7, Bluetooth 6.0"
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "sensorsSecurity",
+                "title": "Sensors & Security",
+                "items": [
+                    {
+                        "key": "lightSensor",
+                        "label": "Light Sensor",
+                        "values": [
+                            "Light sensor, Proximity sensor, Accelerometer, Compass, Gyroscope",
+                            "Light sensor, Proximity sensor, Accelerometer, Compass, Gyroscope"
+                        ]
+                    },
+                    {
+                        "key": "fingerprintSensor",
+                        "label": "Fingerprint Sensor",
+                        "values": [
+                            "Yes",
+                            "Yes"
+                        ]
+                    },
+                    {
+                        "key": "fingerSensorPosition",
+                        "label": "Finger Sensor Position",
+                        "values": [
+                            "On-screen",
+                            "On-screen"
+                        ]
+                    },
+                    {
+                        "key": "fingerSensorType",
+                        "label": "Finger Sensor Type",
+                        "values": [
+                            "Ultrasonic",
+                            "Ultrasonic"
+                        ]
+                    },
+                    {
+                        "key": "faceUnlock",
+                        "label": "Face Unlock",
+                        "values": [
+                            "Yes",
+                            "Yes"
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "multimedia",
+                "title": "Multimedia",
+                "items": [
+                    {
+                        "key": "loudspeaker",
+                        "label": "Loudspeaker",
+                        "values": [
+                            "Dual Speakers",
+                            "Dual Speakers"
+                        ]
+                    },
+                    {
+                        "key": "audioJack",
+                        "label": "Audio Jack",
+                        "values": [
+                            "USB Type-C",
+                            "USB Type-C"
+                        ]
+                    },
+                    {
+                        "key": "video",
+                        "label": "Video",
+                        "values": [
+                            "8K@30fps, 4K@30/60/120fps, 1080p@30/60/120/240fps, HDR, gyro-EIS, Dolby Vision, LUT",
+                            "8K@30fps, 4K@30/60/120fps, 1080p@30/60/120/240fps, HDR, gyro-EIS, Dolby Vision, LUT"
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "more",
+                "title": "More",
+                "items": [
+                    {
+                        "key": "madeBy",
+                        "label": "Made By",
+                        "values": [
+                            "China",
+                            "China"
+                        ]
+                    },
+                    {
+                        "key": "features",
+                        "label": "Features",
+                        "values": [
+                            "Accelerometer, proximity, gyro (UAV-grade), compass, barometer",
+                            "Accelerometer, proximity, gyro (UAV-grade), compass, barometer"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
